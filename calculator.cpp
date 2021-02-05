@@ -5,5 +5,5 @@
 
 int stringCalculate(const std::string &str)
 {
-    return -1;
+    return 0;
 }
