@@ -1,9 +1,20 @@
 #include "calculator.h"
 
 #include <string>
+using std::string;
+#include <sstream>
+using std::istringstream;
 
 
-int stringCalculate(const std::string &str)
+int stringCalculate(const string &str)
 {
-    return 0;
+    if (str.empty())
+        return 0;
+
+    istringstream iss(str);
+
+    int result = 0;
+    iss >> result;
+
+    return result;
 }
