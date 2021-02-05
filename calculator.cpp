@@ -13,8 +13,16 @@ int stringCalculate(const string &str)
 
     istringstream iss(str);
 
-    int result = 0;
-    iss >> result;
+    int n1 = 0;
+    iss >> n1;
+    if (iss.eof())
+        return n1;
 
-    return result;
+    char skip;
+    iss >> skip;
+
+    int n2 = 0;
+    iss >> n2;
+
+    return n1 + n2;
 }
