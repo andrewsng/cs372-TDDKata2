@@ -12,17 +12,25 @@ int stringCalculate(const string &str)
         return 0;
 
     istringstream iss(str);
+    int result = 0;
 
-    int n1 = 0;
-    iss >> n1;
-    if (iss.eof())
-        return n1;
+    while (true)
+    {
+        int n = 0;
+        iss >> n;
+        if (!iss)
+        {
+            if (iss.eof())
+            {
+                break;
+            }
 
-    char skip;
-    iss >> skip;
+            iss.clear();
+            iss.ignore(1);
+        }
 
-    int n2 = 0;
-    iss >> n2;
+        result += n;
+    }
 
-    return n1 + n2;
+    return result;
 }
