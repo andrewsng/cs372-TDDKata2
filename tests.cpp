@@ -30,3 +30,18 @@ TEST_CASE( "Three numbers, delimited either way, returns the sum" ) {
     REQUIRE( stringCalculate("82\n 8,3") == 93);
     REQUIRE( stringCalculate("115 \n15 ,6") == 136);
 }
+
+TEST_CASE( "Negative numbers throw an exception" ) {
+    bool didItThrow = false;
+    
+    try
+    {
+        stringCalculate("-1");
+    }
+    catch (const std::exception &e)
+    {
+        didItThrow = true;
+    }
+
+    REQUIRE( didItThrow == true );
+}
