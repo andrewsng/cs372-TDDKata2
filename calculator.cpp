@@ -29,6 +29,11 @@ int stringCalculate(const string &str)
             iss.ignore(1);
         }
 
+        if (n < 0)
+        {
+            throw std::out_of_range("Negative number");
+        }
+
         result += n;
     }
 
