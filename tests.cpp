@@ -25,3 +25,8 @@ TEST_CASE( "Two numbers, newline delimited, returns the sum" ) {
     REQUIRE( stringCalculate("4\n82") == 86);
 }
 
+TEST_CASE( "Three numbers, delimited either way, returns the sum" ) {
+    REQUIRE( stringCalculate("7, 12\n100") == 119);
+    REQUIRE( stringCalculate("82\n 8,3") == 93);
+    REQUIRE( stringCalculate("115 \n15 ,6") == 136);
+}
