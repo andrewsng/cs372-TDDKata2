@@ -32,16 +32,7 @@ TEST_CASE( "Three numbers, delimited either way, returns the sum" ) {
 }
 
 TEST_CASE( "Negative numbers throw an exception" ) {
-    bool didItThrow = false;
-    
-    try
-    {
-        stringCalculate("-1");
-    }
-    catch (const std::exception &e)
-    {
-        didItThrow = true;
-    }
-
-    REQUIRE( didItThrow == true );
+    REQUIRE_THROWS( stringCalculate("-1") );
+    REQUIRE_THROWS( stringCalculate("14, -73") );
+    REQUIRE_THROWS( stringCalculate("62, 5\n-10") );
 }
