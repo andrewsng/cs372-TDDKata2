@@ -18,3 +18,10 @@ TEST_CASE( "Two numbers, comma delimited, returns the sum" ) {
     REQUIRE( stringCalculate("321, 8") == 329);
     REQUIRE( stringCalculate("4,82") == 86);
 }
+
+TEST_CASE( "Two numbers, newline delimited, returns the sum" ) {
+    REQUIRE( stringCalculate("13 \n48") == 61);
+    REQUIRE( stringCalculate("321\n 8") == 329);
+    REQUIRE( stringCalculate("4\n82") == 86);
+}
+
